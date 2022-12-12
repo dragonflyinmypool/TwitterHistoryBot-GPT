@@ -12,9 +12,3 @@ cron.schedule("0 8,12,18 * * *", () => {
   console.log("running task at specific time");
   getTweet.getNewTeet();
 });
-
-// // cron job every min
-// cron.schedule("* * * * * *", () => {
-//   console.log("running task every min");
-//   getTweet.getNewTeet();
-// });
