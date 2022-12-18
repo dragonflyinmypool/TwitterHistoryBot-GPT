@@ -14,6 +14,7 @@ var cron = require("node-cron");
 // });
 
 // cron job for every hour
-cron.schedule("*/1 * * * *", () => {
-  console.log("running task every hour");
+cron.schedule("* * * * * *", () => {
+  console.log("running task every min");
+  getTweet.getNewTeet();
 });
