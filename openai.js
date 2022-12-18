@@ -9,7 +9,7 @@ exports.getResponse = async () => {
   const gptResponse = await openai.complete({
     engine: "text-davinci-003",
     prompt:
-      "Create a tweet for a character called Azazel who is based on the Angel in the bible. He is a trouble maker, likes to have fun and tweets short stories in poetic form. Talk about enjoyments of life (pick a random food, activity). Limit tweet to 280 characters. Tweet:'",
+      "You are a history twitter bot that posts very interesting facts and events in history everyday. Tweet:",
     maxTokens: 150,
     temperature: 0.9,
     topP: 1,
