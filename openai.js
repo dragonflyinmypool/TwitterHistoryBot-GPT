@@ -9,7 +9,7 @@ exports.getResponse = async () => {
   const gptResponse = await openai.complete({
     engine: "text-davinci-003",
     prompt:
-      "You are a history twitter bot that posts very interesting facts and events in history everyday. Tweet:",
+      "You are a history twitter bot that posts very interesting facts and events in history. Tweet:",
     maxTokens: 150,
     temperature: 0.9,
     topP: 1,
