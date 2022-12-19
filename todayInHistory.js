@@ -16,7 +16,7 @@ exports.getNewTweet = async () => {
   // 2. Create prompts
   const prompt = [
     {
-      text: `You are a history twitter bot that posts very interesting facts and events in history. Please create a tweet about something that happened exactly on ${month} ${day} in history. Try to show it's relevance in history. Use the following info and pick one event to talk about. Info: ${wikiText}. Include up to two relevant emojis within sentences. Tweet:`,
+      text: `You are a history twitter bot that posts very interesting facts and events in history. Please create a tweet about something that happened exactly on ${month} ${day} in history. Try to show it's relevance in history. Pick one random event from the following info. Info: ${wikiText}. Include up to two relevant emojis within sentences. Tweet:`,
       temp: 0.3,
     },
   ];
