@@ -5,13 +5,12 @@ require("dotenv").config();
 // (do not include your key directly in your code)
 const openai = new OpenAI(process.env.API_KEY_OpenAI);
 
-exports.getResponse = async () => {
+exports.getResponse = async (prompt) => {
   const gptResponse = await openai.complete({
     engine: "text-davinci-003",
-    prompt:
-      "You are a history twitter bot that posts very interesting facts and events in history. Tweet:",
+    prompt: prompt.text,
     maxTokens: 150,
-    temperature: 0.9,
+    temperature: prompt.temp,
     topP: 1,
     presencePenalty: 0,
     frequencyPenalty: 0,
