@@ -34,6 +34,4 @@ exports.getNewTweet = async () => {
   twitter.tweet(tweetText);
 };
 
-exports.getNewTweet();
-
 module.exports = exports;
