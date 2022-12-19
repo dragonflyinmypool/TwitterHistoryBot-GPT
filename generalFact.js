@@ -15,7 +15,6 @@ const prompts = [
 
 const random = Math.floor(Math.random() * prompts.length);
 const prompt = prompts[random];
-console.log(random, prompt);
 
 exports.getNewTweet = async () => {
   // Send prompts to open AI API
