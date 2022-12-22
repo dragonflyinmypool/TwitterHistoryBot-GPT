@@ -9,4 +9,4 @@ const generalBot = async () => {
   tweet(gpt);
 };
 
-cronScheduler("generalBot", "0 8,14,18 * * * ", generalBot);
+cronScheduler("generalBot", "0 8,14,18 * * *", generalBot);
