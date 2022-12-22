@@ -6,7 +6,6 @@ const wiki = require("./modules/scrapeWiki");
 const today = new Date();
 const month = today.toLocaleString("default", { month: "long" });
 let day = today.getDate();
-console.log(`${month} ${day}`);
 
 exports.getNewTweet = async () => {
   // 1. Get info from Wikipedia

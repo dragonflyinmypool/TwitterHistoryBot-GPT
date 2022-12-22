@@ -1,6 +1,5 @@
 const openai = require("./modules/openai");
 const twitter = require("./modules/twitter");
-const wiki = require("./modules/scrapeWiki");
 
 const prompts = [
   {
@@ -13,10 +12,12 @@ const prompts = [
   },
 ];
 
-const random = Math.floor(Math.random() * prompts.length);
-const prompt = prompts[random];
-
 exports.getNewTweet = async () => {
+  console.log("general facts export is running");
+
+  const random = Math.floor(Math.random() * prompts.length);
+  const prompt = prompts[random];
+
   // Send prompts to open AI API
   const gptResponse = await openai.getResponse(prompts[1]);
   console.log(prompt, gptResponse);
