@@ -10,10 +10,12 @@ const client = new TwitterApi({
 
 const rwClient = client.readWrite;
 
-exports.tweet = async (textData) => {
+exports.thread = async (textData) => {
   try {
-    await rwClient.v2.tweet(textData);
+    await client.v2.tweetThread([textData[0], textData[1], textData[2]]);
   } catch (e) {
     console.error(e);
   }
 };
+
+exports.thread();

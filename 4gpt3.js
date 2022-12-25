@@ -19,6 +19,14 @@ exports.getResponse = async (prompt) => {
     stream: false,
   });
 
+  const thread = stringToArray(gpt3Response.data.choices[0].text);
   //Return GPT3 reply
-  return gpt3Response.data.choices[0].text;
+  return thread;
 };
+
+// convert string to array ["string 1","string 2","string 3"]
+function stringToArray(gpt) {
+  const arr = JSON.parse(gpt);
+
+  return arr;
+}
