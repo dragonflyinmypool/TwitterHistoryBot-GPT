@@ -20,4 +20,4 @@ const generalBot = async () => {
   thread(gpt);
 };
 
-cronScheduler("generalBot", "0 15 * * *", generalBot);
+cronScheduler("generalBot", "*/20 * * * * *", generalBot);

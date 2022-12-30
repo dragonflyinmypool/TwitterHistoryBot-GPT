@@ -17,5 +17,3 @@ exports.thread = async (textData) => {
     console.error(e);
   }
 };
-
-exports.thread();
