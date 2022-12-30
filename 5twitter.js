@@ -12,7 +12,17 @@ const rwClient = client.readWrite;
 
 exports.thread = async (textData) => {
   try {
-    await client.v2.tweetThread([textData[0], textData[1], textData[2]]);
+    // First, post all your images to Twitter
+    const mediaId = await client.v1.uploadMedia("./image/1.jpg");
+
+    await client.v2.tweetThread([
+      {
+        text: textData[0],
+        media: { media_ids: [mediaId] },
+      },
+      textData[1],
+      textData[2],
+    ]);
   } catch (e) {
     console.error(e);
   }

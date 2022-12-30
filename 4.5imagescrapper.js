@@ -1,4 +1,7 @@
-async function getImage() {
+// axios require
+const axios = require("axios");
+
+async function getImage(search) {
   try {
     const response = await axios({
       method: "get",
@@ -7,12 +10,17 @@ async function getImage() {
         "Ocp-Apim-Subscription-Key": "265cab104953490eb3afce7731dc077a",
       },
       params: {
-        q: "soviet",
+        q: search,
         count: 1,
       },
     });
+
+    return response.data.value[0].contentUrl;
   } catch (error) {
     console.log(error);
   }
-  return response.data.value[0].contentUrl;
 }
+
+module.exports = {
+  getImage,
+};

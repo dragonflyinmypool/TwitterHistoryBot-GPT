@@ -2,7 +2,7 @@ const { getText } = require("./2.0scraper.js");
 const { createPrompt } = require("./2.5prompts.js");
 const { cronScheduler } = require("./3cron.js");
 const { getResponse } = require("./4gpt3.js");
-const { axios } = require("./4.5imagescrapper.js");
+const { getImage } = require("./4.5imagescrapper.js");
 const { thread } = require("./5twitter.js");
 
 const generalBot = async () => {
@@ -20,10 +20,12 @@ const generalBot = async () => {
   console.log(gpt);
 
   // get the image
-  const { axios } = await require("./4.5imagescrapper.js");
+  const image = await getImage(gpt[3]);
+  console.log(image);
 
   // Post the tweet
   thread(gpt);
 };
 
-cronScheduler("generalBot", "0 */10 * * *", generalBot);
+// cronScheduler("generalBot", "0 */10 * * *", generalBot);
+generalBot();
