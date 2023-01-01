@@ -1,9 +1,9 @@
-const { getText } = require("./2.0scraper.js");
-const { createPrompt } = require("./2.5prompts.js");
-const { cronScheduler } = require("./3cron.js");
-const { getResponse } = require("./4gpt3.js");
-const { getImage } = require("./4.5imagescrapper.js");
-const { thread } = require("./5twitter.js");
+const { getText } = require('./2.0scraper.js');
+const { createPrompt } = require('./2.5prompts.js');
+const { cronScheduler } = require('./3cron.js');
+const { getResponse } = require('./4gpt3.js');
+const { getImage } = require('./4.5imagescrapper.js');
+const { thread } = require('./5twitter.js');
 
 const generalBot = async () => {
   // Get the article
