@@ -5,7 +5,7 @@ require('dotenv').config();
 const gpt3 = new GPT3Lib(process.env.API_KEY_OpenAI);
 
 // Call OpenAI API
-exports.getResponse = async (prompt) => {
+exports.generateTweetGPT3 = async (prompt) => {
   const gpt3Response = await gpt3.complete({
     engine: 'text-davinci-003',
     prompt: prompt.text,

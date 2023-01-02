@@ -4,7 +4,7 @@ const Path = require('path');
 const Axios = require('axios');
 
 async function downloadImage(url) {
-  const path = Path.resolve(__dirname, 'image', '1.jpg');
+  const path = Path.resolve(__dirname, './', '1.jpg');
   const writer = Fs.createWriteStream(path);
 
   const response = await Axios(url, {

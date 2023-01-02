@@ -10,7 +10,7 @@ const getImageUrl = async (searchTerms) => {
     method: 'get',
     url: 'https://api.bing.microsoft.com/v7.0/images/search?',
     headers: {
-      'Ocp-Apim-Subscription-Key': '265cab104953490eb3afce7731dc077a',
+      'Ocp-Apim-Subscription-Key': process.env.BING_API_KEY,
     },
     params: {
       q: searchTerms,
