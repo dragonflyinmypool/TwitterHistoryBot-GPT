@@ -10,7 +10,7 @@ const getHistoryText = async () => {
 
   console.log('---');
   console.log('1. History text scrapped: ');
-  console.log(text);
+  // console.log(text);
   console.log('---');
 
   return text;

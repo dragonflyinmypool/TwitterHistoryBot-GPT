@@ -1,3 +1,4 @@
+const fs = require('fs');
 const { TwitterApi } = require('twitter-api-v2');
 require('dotenv').config();
 
@@ -10,10 +11,10 @@ const client = new TwitterApi({
 
 const rwClient = client.readWrite;
 
-exports.thread = async (textData) => {
+exports.postTweet = async (textData) => {
   try {
     // First, post all your images to Twitter
-    const mediaId = await client.v1.uploadMedia('./image/1.jpg');
+    const mediaId = await client.v1.uploadMedia('../image/1.jpg');
 
     await client.v2.tweetThread([
       {
@@ -24,9 +25,13 @@ exports.thread = async (textData) => {
       textData[2],
     ]);
 
+    console.log('---');
+    console.log('5. Image uploaded');
+    // console.log();
+    console.log('---');
+
     // delete image file
-    const fs = require('fs');
-    fs.unlink('./image/1.jpg', (err) => {
+    await fs.unlink('../image/1.jpg', (err) => {
       if (err) {
         console.error(err);
         return;

@@ -14,9 +14,19 @@ const generalBot = async () => {
   // 3. Generate the tweet with GPT3 using history text
   const tweetArray = await generateTweetGPT3(gpt3Prompt);
   // 4. Get the image
-  const imageURL = await getImageUrl(tweetArray[3]);
+  const imageURLs = await getImageUrl(tweetArray[3]);
   // 5. Download the image
-  const image = await downloadImage(imageURL);
+  // Try to download one image, start with the first if it fails try the second, etc.
+  // use await downloadImage(imageURLs[i])
+  for (let i = 0; i < imageURLs.length; i++) {
+    try {
+      const image = await downloadImage(imageURLs[i].contentUrl);
+      break;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  //
   // 6. Post the tweet
   postTweet(tweetArray);
 };

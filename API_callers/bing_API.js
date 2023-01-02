@@ -14,11 +14,11 @@ const getImageUrl = async (searchTerms) => {
     },
     params: {
       q: searchTerms,
-      count: 1,
+      count: 5,
     },
   });
-  console.log(image.data.value[0].contentUrl);
-  return image.data.value[0].contentUrl;
+  // console.log(image.data.value);
+  return image.data.value;
 };
 
 // export the function
