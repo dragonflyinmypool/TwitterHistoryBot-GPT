@@ -1,5 +1,5 @@
-const GPT3Lib = require("openai-api");
-require("dotenv").config();
+const GPT3Lib = require('openai-api');
+require('dotenv').config();
 
 // Load key
 const gpt3 = new GPT3Lib(process.env.API_KEY_OpenAI);
@@ -7,9 +7,9 @@ const gpt3 = new GPT3Lib(process.env.API_KEY_OpenAI);
 // Call OpenAI API
 exports.getResponse = async (prompt) => {
   const gpt3Response = await gpt3.complete({
-    engine: "text-davinci-003",
+    engine: 'text-davinci-003',
     prompt: prompt.text,
-    maxTokens: 150,
+    maxTokens: 350,
     temperature: prompt.temp,
     topP: 1,
     presencePenalty: 0,
@@ -27,6 +27,5 @@ exports.getResponse = async (prompt) => {
 // convert string to array ["string 1","string 2","string 3"]
 function stringToArray(gpt) {
   const arr = JSON.parse(gpt);
-
   return arr;
 }
