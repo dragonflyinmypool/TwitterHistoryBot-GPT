@@ -4,7 +4,7 @@ const Path = require('path');
 const Axios = require('axios');
 
 async function downloadImage(url) {
-  const path = Path.resolve(__dirname, 'files', 'image.jpg');
+  const path = Path.resolve(__dirname, 'image', '1.jpg');
   const writer = Fs.createWriteStream(path);
 
   const response = await Axios(url, {
@@ -20,7 +20,6 @@ async function downloadImage(url) {
   });
 }
 
-const testUrl =
-  'https://i.pinimg.com/originals/3f/66/d0/3f66d0357400f5c75412f9e46f09362b.jpg';
-
-downloadImage(testUrl).then(console.log('Image downloaded: ' + testUrl));
+module.exports = {
+  downloadImage,
+};

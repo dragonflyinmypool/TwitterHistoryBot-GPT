@@ -23,6 +23,15 @@ exports.thread = async (textData) => {
       textData[1],
       textData[2],
     ]);
+
+    // delete image file
+    const fs = require('fs');
+    fs.unlink('./image/1.jpg', (err) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+    });
   } catch (e) {
     console.error(e);
   }

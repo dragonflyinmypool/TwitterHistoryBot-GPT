@@ -28,8 +28,8 @@ const generalBot = async () => {
   // Download the image
   const image = await downloadImage(imageURL);
 
-  // // Post the tweet
-  // thread(gpt);
+  // Post the tweet
+  thread(gpt);
 };
 
 // cronScheduler("generalBot", "0 */10 * * *", generalBot);
