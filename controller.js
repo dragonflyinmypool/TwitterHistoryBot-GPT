@@ -12,9 +12,9 @@ const generalBot = async () => {
   // 2. Create the prompt
   const gpt3Prompt = createPrompt(historyText);
   // 3. Generate the tweet with GPT3 using history text
-  const tweetArray = await generateTweetGPT3(gpt3Prompt);
+  const tweetObject = await generateTweetGPT3(gpt3Prompt);
   // 4. Get the image
-  const imageURLs = await getImageUrl(tweetArray[3]);
+  const imageURLs = await getImageUrl(tweetObject.SearchQuery);
   // 5. Download the image
   // Try to download one image, start with the first if it fails try the second, etc.
   // use await downloadImage(imageURLs[i])
@@ -28,7 +28,7 @@ const generalBot = async () => {
   }
   //
   // 6. Post the tweet
-  postTweet(tweetArray);
+  postTweet(tweetObject.tweets);
 };
 
 // scheduleTask("generalBot", "0 */10 * * *", generalBot);

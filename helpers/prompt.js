@@ -19,14 +19,20 @@ Follow these rules when generating the tweets:
 1. Use the article provided to genearate the content. 
   - Ingnore any html or javascript.
   - Ignore links or 'read more' section in the article text, don't include this info in the tweet.    
-  - The article is:  
-      >>>${article}<<<
 2. Create a thread of three tweets
   - A. Do not include hash tags, no #hashtags
   - The tweets should be interesting, informative and relevant to the average reader. 
   - Don't use emojis or any other special characters.
   - The information should be factual and based on the article provided, do not make it up.    
 3. Also I would like to add a photo to the first tweet so please come up with relevant search query that I can use to query bing images api. 
-4. Your repsonse should be in the following format (this is very important). Use double quotes for each array item.: 
-["Tweet 1","Tweet 2","Tweet 3","Search query"]`;
+  - This could be a person, a specific event, a map, etc. 
+  - It needs to be a photo that when the query is used will likely appear as the first image result.
+  - The image should be relevant to the first tweet, since it will be posted with the first tweet.
+4.- The article is:  
+      >>>${article}<<<
+5. Your repsonse should be in the following format (this is very important): 
+response:{"tweets":["Tweet 1","tweet2","tweet3"],"SearchQuery":"Search query"}
+6. Note each tweet should not be more than 280 characters.
+---
+response:`;
 }

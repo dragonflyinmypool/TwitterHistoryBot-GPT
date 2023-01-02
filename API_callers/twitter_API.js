@@ -14,7 +14,7 @@ const rwClient = client.readWrite;
 exports.postTweet = async (textData) => {
   try {
     // First, post all your images to Twitter
-    const mediaId = await client.v1.uploadMedia('../image/1.jpg');
+    const mediaId = await client.v1.uploadMedia('./image/1.jpg');
 
     await client.v2.tweetThread([
       {
@@ -31,7 +31,7 @@ exports.postTweet = async (textData) => {
     console.log('---');
 
     // delete image file
-    await fs.unlink('../image/1.jpg', (err) => {
+    await fs.unlink('./image/1.jpg', (err) => {
       if (err) {
         console.error(err);
         return;
