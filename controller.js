@@ -31,5 +31,5 @@ const generalBot = async () => {
   postTweet(tweetObject.tweets);
 };
 
-// scheduleTask("generalBot", "0 */10 * * *", generalBot);
-generalBot();
+scheduleTask('generalBot', '0 */10 * * *', generalBot);
+// generalBot();
