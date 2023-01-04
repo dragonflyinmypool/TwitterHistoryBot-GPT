@@ -31,5 +31,6 @@ const generalBot = async () => {
   postTweet(tweetObject.tweets);
 };
 
-scheduleTask('generalBot', '0 */10 * * *', generalBot);
+scheduleTask('generalBot', '22 17 * * *', generalBot);
 // generalBot();
+// cron job at 5:22pm every day
