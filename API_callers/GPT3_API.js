@@ -14,7 +14,7 @@ exports.generateTweetGPT3 = async (prompt) => {
   const gpt3Response = await gpt3.complete({
     engine: 'text-davinci-003',
     prompt: prompt.text,
-    maxTokens: 350,
+    maxTokens: 1250,
     temperature: prompt.temp,
     topP: 1,
     presencePenalty: 0,
