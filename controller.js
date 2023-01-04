@@ -32,6 +32,8 @@ const generalBot = async () => {
 };
 
 // cron job at 5:22pm every day
-scheduleTask('0 22 17 * * *', generalBot);
-console.log('Cron job scheduled 5:40pm every day');
+const timing = '50 17 * * *';
+const name = '5:50pm once a day';
 // generalBot();
+scheduleTask('5:50pm once a day', timing, generalBot);
+console.log(name, timing);
