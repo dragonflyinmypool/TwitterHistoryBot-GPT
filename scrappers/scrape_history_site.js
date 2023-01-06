@@ -49,3 +49,5 @@ const getHistoryText = async () => {
 module.exports = {
   getHistoryText,
 };
+
+// P
