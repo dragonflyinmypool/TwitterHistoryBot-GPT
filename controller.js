@@ -8,7 +8,20 @@ const { postTweet } = require('./API_callers/twitter_API.js');
 
 const generalBot = async () => {
   // 1. Get the article
-  const historyText = await getHistoryText();
+
+  // Try to get the article 5 times, if it fails wait 5 minutes and try again
+  let historyText = '';
+  for (let i = 0; i < 5; i++) {
+    try {
+      historyText = await getHistoryText();
+      break;
+    } catch (error) {
+      console.log(error);
+      await new Promise((resolve) => setTimeout(resolve, 300000));
+    }
+  }
+
+
   console.log(historyText);
   // 2. Create the prompt
   const gpt3Prompt = createPrompt(historyText);
