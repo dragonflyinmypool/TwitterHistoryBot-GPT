@@ -14,9 +14,7 @@ const rwClient = client.readWrite;
 exports.postTweet = async (textData) => {
   try {
     // First, post all your images to Twitter
-    const mediaId = await client.v1.uploadMedia(
-      'https://lp-cms-production.imgix.net/2021-05/GettyRF_462144413.jpg?auto=format&q=40&ar=16%3A9&fit=crop&crop=center&fm=auto&w=1946'
-    );
+    const mediaId = await client.v1.uploadMedia('./image/1.jpg');
 
     await client.v2.tweetThread([
       {

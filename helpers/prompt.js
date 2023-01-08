@@ -1,4 +1,5 @@
 const createPrompt = (article) => {
+  console.log(article)
   return {
     text: prompt2(article),
     temp: 0.8,
