@@ -30,5 +30,5 @@ const generalBot = async () => {
 };
 
 generalBot();
-// const timing = '0 22 17 * * *';
-// cron_scheduler('5:50pm once a day', timing, generalBot);
+const timing = '0 22 17 * * *';
+cron_scheduler('5:50pm once a day', timing, generalBot);
