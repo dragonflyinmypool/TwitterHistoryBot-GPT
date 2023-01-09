@@ -15,7 +15,7 @@ const generalBot = async () => {
   const tweetObject = await GPT3_API(gpt3Prompt);
   // // 4. Send the search query to Bing Image search API and save 5 urls
   const imageURLs = await bing_API(tweetObject.SearchQuery);
-  // // 5. Try downloading an image, keep trying untill one is succesful
+  // // 5. Try downloading an image, keep trying untill one is succesful`
   for (let i = 0; i < imageURLs.length; i++) {
     try {
       const image = await image_downloader(imageURLs[i].contentUrl);
