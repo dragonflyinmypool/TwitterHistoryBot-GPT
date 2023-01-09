@@ -25,19 +25,17 @@ exports.postTweet = async (textData) => {
       textData[2],
     ]);
 
-    console.log('---');
-    console.log('5. Image uploaded');
-    // console.log();
-    console.log('---');
-
-    // delete image file
-    await fs.unlink('./image/1.jpg', (err) => {
-      if (err) {
-        console.error(err);
-        return;
-      }
-    });
+    deleteImage();
   } catch (e) {
     console.error(e);
   }
 };
+
+function deleteImage() {
+  fs.unlink('./image/1.jpg', (err) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+  });
+}

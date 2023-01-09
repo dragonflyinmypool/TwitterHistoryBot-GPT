@@ -1,11 +1,7 @@
-// get image url from bing
 const axios = require('axios');
 
-const searchTerms = 'angry stupid people in cars';
-
-// create a new async function
-const getImageUrl = async (searchTerms) => {
-  // get the image url
+exports.getImageUrl = async (searchTerms) => {
+  // get 5 image urls
   const image = await axios({
     method: 'get',
     url: 'https://api.bing.microsoft.com/v7.0/images/search?',
@@ -17,11 +13,7 @@ const getImageUrl = async (searchTerms) => {
       count: 5,
     },
   });
-  // console.log(image.data.value);
-  return image.data.value;
-};
 
-// export the function
-module.exports = {
-  getImageUrl,
+  // Return the image urls
+  return image.data.value;
 };
