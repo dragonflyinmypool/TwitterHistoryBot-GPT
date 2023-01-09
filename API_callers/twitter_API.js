@@ -11,7 +11,7 @@ const client = new TwitterApi({
 
 const rwClient = client.readWrite;
 
-exports.postTweet = async (textData) => {
+let twitter_API = async (textData) => {
   try {
     // First, post all your images to Twitter
     const mediaId = await client.v1.uploadMedia('./image/1.jpg');
@@ -24,7 +24,7 @@ exports.postTweet = async (textData) => {
       textData[1],
       textData[2],
     ]);
-
+    console.log('=== Tweets posted on twitter  ===');
     deleteImage();
   } catch (e) {
     console.error(e);
@@ -39,3 +39,5 @@ function deleteImage() {
     }
   });
 }
+
+module.exports = { twitter_API };

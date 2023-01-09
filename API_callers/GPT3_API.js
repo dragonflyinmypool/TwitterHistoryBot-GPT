@@ -5,7 +5,7 @@ require('dotenv').config();
 const gpt3 = new GPT3Lib(process.env.API_KEY_OpenAI);
 
 // Call OpenAI API
-exports.generateTweetGPT3 = async (prompt) => {
+exports.GPT3_API = async (prompt) => {
   const gpt3Response = await gpt3.complete({
     engine: 'text-davinci-003',
     prompt: prompt.text,
@@ -19,6 +19,16 @@ exports.generateTweetGPT3 = async (prompt) => {
     stream: false,
   });
   const thread = stringToArray(gpt3Response.data.choices[0].text);
+
+  console.log(`
+  ----------------------------------------------------------------------
+  3. GPT3 reply:
+  ----------------------------------------------------------------------
+  ===> Tweets ==> ${thread.tweets}
+
+  
+  ===> Search Query ==> ${thread.SearchQuery}
+  `);
 
   return thread;
 };

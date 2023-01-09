@@ -2,7 +2,7 @@ const Fs = require('fs');
 const Path = require('path');
 const Axios = require('axios');
 
-exports.downloadImage = async (url) => {
+exports.image_downloader = async (url) => {
   const path = Path.resolve(__dirname, '../image', '1.jpg');
   const writer = Fs.createWriteStream(path);
 

@@ -1,12 +1,12 @@
-exports.createPrompt = (article) => {
+exports.prompt = (article) => {
   return {
-    text: prompt(article),
+    text: prompt1(article),
     temp: 0.8,
   };
 };
 
-function prompt(article) {
-  return `You are a history twitter bot that posts very interesting tweets about history.
+function prompt1(article) {
+  const thePrompt = `You are a history twitter bot that posts very interesting tweets about history.
 Follow these rules when generating the tweets:
 1. Use the article provided to genearate the content. 
   - Ingnore any html or javascript.
@@ -29,4 +29,13 @@ response:{"tweets":["Tweet 1","tweet2","tweet3"],"SearchQuery":"Search query"}
 6. Note each tweet should not be more than 280 characters.
 ---
 response:`;
+
+  console.log(`
+  ----------------------------------------------------------------------
+  2. Prompt created: 
+  ----------------------------------------------------------------------
+  
+  ${thePrompt}`);
+
+  return thePrompt;
 }

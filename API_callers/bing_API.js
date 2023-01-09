@@ -14,6 +14,13 @@ exports.bing_API = async (searchTerms) => {
     },
   });
 
+  console.log(`
+  ----------------------------------------------------------------------
+  3. Pulled urls from Bing 
+  ----------------------------------------------------------------------
+  
+  ${image.data.value}`);
+
   // Return the image urls
   return image.data.value;
 };
