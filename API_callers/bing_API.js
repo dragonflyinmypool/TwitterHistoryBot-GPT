@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-exports.getImageUrl = async (searchTerms) => {
+exports.bing_API = async (searchTerms) => {
   // get 5 image urls
   const image = await axios({
     method: 'get',
