@@ -2,30 +2,30 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 const scrapper_API = async (url) => {
-  // const headers = {
-  //   apikey: 'ba0ac990-8eee-11ed-9356-ad3b28196789',
-  // };
+  const headers = {
+    apikey: 'ba0ac990-8eee-11ed-9356-ad3b28196789',
+  };
 
-  // const options = {
-  //   url: 'https://app.zenscrape.com/api/v1/get?&url=https://www.history.com/this-day-in-history&location=na',
-  //   headers: headers,
-  // };
+  const options = {
+    url: 'https://app.zenscrape.com/api/v1/get?&url=https://www.history.com/this-day-in-history&location=na',
+    headers: headers,
+  };
 
-  // const response = await axios(options);
-  // const $ = await cheerio.load(response.data);
-  // const text = $('.l-grid--content-body').text();
-  // // remove all text after "WATCH:"
-  // const textIndex = text.indexOf('WATCH:');
-  // const textTrimmed = text.slice(0, textIndex);
+  const response = await axios(options);
+  const $ = await cheerio.load(response.data);
+  const text = $('.l-grid--content-body').text();
+  // remove all text after "WATCH:"
+  const textIndex = text.indexOf('WATCH:');
+  const textTrimmed = text.slice(0, textIndex);
 
   console.log(`
   ----------------------------------------------------------------------
   1. History text created:
   ----------------------------------------------------------------------
-  ${dummyTest.slice(0, 300)}...
+  ${textTrimmed.slice(0, 300)}...
   `);
 
-  return dummyTest;
+  return textTrimmed;
 };
 
 exports.scrapper_API = scrapper_API;
