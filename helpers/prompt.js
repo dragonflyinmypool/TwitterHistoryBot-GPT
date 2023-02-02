@@ -26,7 +26,7 @@ Follow these rules when generating the tweets:
       >>>${article}<<<
 5. Your repsonse should be in the following format (this is very important): 
 response:{"tweets":["Tweet 1","tweet2","tweet3"],"SearchQuery":"Search query"}
-6. Note each tweet should not be more than 280 characters.
+6. Note each tweet should not be more than 280 characters. Write with the ideas of jordan perterson (not woke).
 ---
 response:`;
 
