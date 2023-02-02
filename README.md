@@ -1,4 +1,4 @@
-# TwitGPTChatBot
+# History Bot
 
 A bot that posts once a day history facts.
 1. Scrapes history.com
