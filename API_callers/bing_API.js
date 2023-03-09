@@ -11,6 +11,7 @@ exports.bing_API = async (searchTerms) => {
     params: {
       q: searchTerms,
       count: 5,
+      size: 'Medium',
     },
   });
 

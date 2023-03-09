@@ -1,5 +1,6 @@
 const { cron_scheduler } = require('./helpers/cron_scheduler');
 const { scrapper_API } = require('./API_callers/scrapper_API.js');
+const { scrapeWiki } = require('./helpers/wiki.js');
 const { prompt } = require('./helpers/prompt.js');
 const { GPT3_API } = require('./API_callers/GPT3_API.js');
 const { bing_API } = require('./API_callers/bing_API.js');
@@ -8,7 +9,9 @@ const { twitter_API } = require('./API_callers/twitter_API.js');
 
 const generalBot = async () => {
   // 1. Get article from history.com with zenscrape API
-  const historyText = await scrapper_API();
+  // const historyText = await scrapper_API();
+  const historyText = await scrapeWiki();
+
   // 2. Create the prompt with text and history.com article
   const gpt3Prompt = prompt(historyText);
   // // 3. Send prompt to GPT3 and save response (3 tweets, 1 search query)
