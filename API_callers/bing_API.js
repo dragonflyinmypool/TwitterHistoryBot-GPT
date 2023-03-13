@@ -11,7 +11,8 @@ exports.bing_API = async (searchTerms) => {
     params: {
       q: searchTerms,
       count: 5,
-      size: 'Medium',
+      maxFileSize: '250192',
+      minFileSize: '25192',
     },
   });
 

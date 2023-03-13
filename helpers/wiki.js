@@ -1,7 +1,7 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-const url = 'https://en.wikipedia.org/wiki/Saul';
+const url = 'https://en.wikipedia.org/wiki/Dravidian_architecture';
 
 async function scrapeWiki() {
   try {
@@ -25,6 +25,8 @@ async function scrapeWiki() {
 
     // cut of text after 2000 characters
     allText = allText.slice(0, 2000);
+
+    allText = allText + 'url: ' + url;
 
     return allText;
   } catch (error) {
